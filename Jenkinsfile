@@ -25,8 +25,16 @@ pipeline{
                 )]) {
                     sh 'echo $PASS | docker login -u $USER --password-stdin'
                     sh 'docker push $IMAGE_NAME'
+                    sh 'docker logout'
                 }
             }
+        }
+    }
+
+    post{
+        always {
+            echo 'Cleaning up workspace....'
+            cleanWs()
         }
     }
 }
