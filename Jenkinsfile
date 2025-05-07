@@ -38,9 +38,9 @@ pipeline {
                     sh '''
                         ssh -o StrictHostKeyChecking=no ubuntu@65.0.109.208 << EOF
                         sudo docker pull $IMAGE_NAME
-                        sudo docker stop harp_sammet || true
-                        sudo docker rm harp_sammet || true
-                        sudo docker run -d --name harp_sammet -p 5000:5000 $IMAGE_NAME
+                        sudo docker stop sharp_sammet || true
+                        sudo docker rm sharp_sammet || true
+                        sudo docker run -d --name sharp_sammet -p 5000:5000 $IMAGE_NAME
                         EOF
                     '''
                 }
