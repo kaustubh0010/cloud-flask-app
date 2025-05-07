@@ -1,15 +1,19 @@
 pipeline{
     agent any
-    enviorment{
+    enviroment{
         IMAGE_NAME = 'k4k010/cloud-flask-app'
     }
     stages{
         stage('Clone Repository'){
-            git 'https://github.com/kaustubh0010/cloud-flask-app.git'
+            steps{
+                git 'https://github.com/kaustubh0010/cloud-flask-app.git'
+            }
         }
 
         stage('Build Docker Image'){
-            sh 'docker build -t $IMAGE_NAME .'
+            steps{
+                sh 'docker build -t $IMAGE_NAME .'
+            }
         }
 
         stage('Push to Docker Hub'){
