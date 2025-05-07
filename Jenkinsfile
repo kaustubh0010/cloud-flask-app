@@ -36,11 +36,11 @@ pipeline {
             steps {
                 sshagent(['server-ssh']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no user@your-server-ip << EOF
-                        docker pull $IMAGE_NAME
-                        docker stop flask-app || true
-                        docker rm flask-app || true
-                        docker run -d --name flask-app -p 5000:5000 $IMAGE_NAME
+                        ssh -o StrictHostKeyChecking=no ubuntu@65.0.109.208 << EOF
+                        sudo docker pull $IMAGE_NAME
+                        sudo docker stop harp_sammet || true
+                        sudo docker rm harp_sammet || true
+                        sudo docker run -d --name harp_sammet -p 5000:5000 $IMAGE_NAME
                         EOF
                     '''
                 }
