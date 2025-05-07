@@ -36,7 +36,7 @@ pipeline {
             steps {
                 sshagent(['server-ssh']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no ubuntu@65.0.109.208 << EOF
+                        ssh -o StrictHostKeyChecking=no ubuntu@65.0.109.208 << 'EOF'
                         sudo docker pull $IMAGE_NAME
                         sudo docker stop sharp_sammet || true
                         sudo docker rm sharp_sammet || true
