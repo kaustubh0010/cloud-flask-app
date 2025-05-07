@@ -16,10 +16,10 @@ A minimal Flask application deployed using Docker and Jenkins with automated CI/
 ---
 
 ## 🗂 Project Structure
-├── app.py # Flask app
-├── Dockerfile # Docker build instructions
-├── requirements.txt # Python dependencies
-└── Jenkinsfile # Jenkins pipeline script
+-├── app.py # Flask app
+-├── Dockerfile # Docker build instructions
+-├── requirements.txt # Python dependencies
+-└── Jenkinsfile # Jenkins pipeline script
 
 
 ---
