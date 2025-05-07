@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    enviroment{
+    environment{
         IMAGE_NAME = 'k4k010/cloud-flask-app'
     }
     stages{
