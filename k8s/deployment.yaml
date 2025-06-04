@@ -1,0 +1,23 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+  name: test-deployment
+  namespace: nginx
+  labels:
+    app: test-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+      - name: test-app-cont
+        image: k4k010/cloud-flask-app
+        ports:
+        - containerPort: 5000
